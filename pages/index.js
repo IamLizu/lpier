@@ -2,6 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Fetch from '../components/Fetch'
 import { useState } from 'react'
+import Render from '../components/Render'
 
 export default function Home() {
 
@@ -23,6 +24,7 @@ export default function Home() {
       <main className={styles.main}>
         <Fetch state={state} update={update}/>
         {console.log(meta)}
+        <Render state={state} data={meta}/>
       </main>
 
       <footer className={styles.footer}>
