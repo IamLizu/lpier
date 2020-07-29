@@ -1,18 +1,28 @@
-// import React from 'react'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Fetch from '../components/Fetch'
+import { useState } from 'react'
 
 export default function Home() {
+
+  const [state, setState] = useState('initial')
+  const [meta, setMeta] = useState({})
+
+  const update = ( data, s ) => {
+    setMeta(data)
+    setState(s)
+  }
+
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>lpier | Next.js implementation of harpies</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
-        <Fetch />
+        <Fetch state={state} update={update}/>
+        {console.log(meta)}
       </main>
 
       <footer className={styles.footer}>
