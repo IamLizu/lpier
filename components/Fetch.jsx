@@ -47,11 +47,7 @@ export default function Fetch(props){
 
         return(
             <>
-                <div id="infoOGD" style={{ display: 'none'}}>
-                    <Alert style={{ fontSize: 11 }} message="Make sure the webpage has open graph meta data." type="info" showIcon/>
-                </div>
-
-                <br></br><br></br><br></br>
+                <br></br><br></br>
                 <div className={utilStyles.flexBaseline}>
                     <div>
                         <Input
@@ -70,6 +66,10 @@ export default function Fetch(props){
                             GET
                         </Button>
                     </div>
+                </div>
+                <br></br><br></br>
+                <div id="infoOGD" style={{ display: 'none'}}>
+                    <Alert style={{ fontSize: 11 }} message="Make sure the webpage has open graph meta data." type="info" showIcon/>
                 </div>
             </>
         )
