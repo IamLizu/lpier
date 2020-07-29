@@ -1,4 +1,4 @@
-import { Input, Button } from 'antd'
+import { Input, Button, Alert } from 'antd'
 import utilStyles from '../styles/util.module.css'
 
 const { TextArea } = Input
@@ -30,6 +30,20 @@ export default function Render(props) {
                         COPY
                     </Button>
                 </div>
+            </>
+        )
+    } 
+    if (props.state == "renderError") {
+        return(
+            <>
+                <Alert
+                    message="Errrr!"
+                    description={props.data}
+                    type="error"
+                    showIcon
+                    closable
+                    onClose={resetEnv}
+                />
             </>
         )
     } else {
