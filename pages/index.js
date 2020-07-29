@@ -24,7 +24,7 @@ export default function Home() {
       <main className={styles.main}>
         <Fetch state={state} update={update}/>
         {console.log(meta)}
-        <Render state={state} data={meta}/>
+        <Render state={state} data={meta} update={update}/>
       </main>
 
       <footer className={styles.footer}>

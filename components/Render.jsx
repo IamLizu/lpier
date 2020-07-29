@@ -4,6 +4,14 @@ import utilStyles from '../styles/util.module.css'
 const { TextArea } = Input
 
 export default function Render(props) {
+    const copyToClip = () => {
+        navigator.clipboard.writeText(JSON.stringify(props.data))
+    }
+
+    const resetEnv = () => {
+        props.update('', 'initial')
+    }
+
     if (props.state == "renderData") {
         return(
             <>
@@ -14,11 +22,11 @@ export default function Render(props) {
                 />
                 <br></br>
                 <div className={utilStyles.flexBaseline}>
-                    <Button type="primary" size='small'>
+                    <Button type="primary" size='small' onClick={resetEnv}>
                         AGAIN
                     </Button>
                     &nbsp;
-                    <Button type="default" size='small'>
+                    <Button type="default" size='small' onClick={copyToClip}>
                         COPY
                     </Button>
                 </div>
