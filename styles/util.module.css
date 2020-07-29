@@ -1,0 +1,4 @@
+.flexBaseline {
+    display: flex;
+    justify-content: baseline;
+}
