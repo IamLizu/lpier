@@ -20,6 +20,8 @@ export default function Fetch(props){
         }
 
         const getData = async () => {
+            document.getElementById('infoGET').style.display ='block'
+
             const rawData = await fetch(`https://cors-anywhere.herokuapp.com/${webpage}`)
             const data = await rawData.text()
 
@@ -70,6 +72,10 @@ export default function Fetch(props){
                 <br></br><br></br>
                 <div id="infoOGD" style={{ display: 'none'}}>
                     <Alert style={{ fontSize: 11 }} message="Make sure the webpage has open graph meta data." type="info" showIcon/>
+                </div>
+                <br></br>
+                <div id="infoGET" style={{ display: 'none'}}>
+                    <Alert style={{ fontSize: 11 }} message="Please wait while I am fetching the info." type="info" showIcon/>
                 </div>
             </>
         )
